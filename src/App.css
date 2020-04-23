@@ -1,38 +1,228 @@
-.App {
-  text-align: center;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #696969;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/*--------------*/
+/*--- NAVBAR ---*/
+/*--------------*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: cadetblue;
+  z-index: 1;
+}
+
+li {
+  padding-right: 30px ;
+  text-decoration: none;
   color: white;
+  transition: 0.5s linear;
 }
 
-.App-link {
-  color: #61dafb;
+li:hover {
+ transform: scale(1.1)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-brand img{
+  width: 120px;
 }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+/*--------------*/
+/*--- FOOTER ---*/
+/*--------------*/
+
+footer {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/*---------------*/
+/*--- E-STORE ---*/
+/*---------------*/
+
+.container {
+  max-width: 1140px;
+  margin: 80px auto 0 auto;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: overline;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid grey;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 300px;
+  margin: 10px;
+}
+
+.product-image {
+  width: 50%;
+  transition: 0.5s ease;
+}
+
+.product-card:hover .product-image{
+  transform: scale(1.1);
+}
+
+.btn-cart{
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-top-left-radius: 10px;
+  background-color: cadetblue;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s ease;
+  outline: none;
+}
+
+.product-card:hover .btn-cart{
+  transform: translate(-100%)
+}
+
+/*---------------*/
+/*--- DETAILS ---*/
+/*---------------*/
+
+.detail-container,
+.cart-container {
+  text-align: center;
+  max-width: 720px;
+  margin: 80px auto 0 auto;
+  height: 100vh;
+}
+
+.detail-image {
+  width: 50%;
+}
+
+.detail-info p {
+  text-align: initial;
+  padding: 0 10px;
+}
+
+.btn-store {
+  padding: 10px 15px;
+  border: none;
+  background-color: cadetblue;
+  color: white;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  outline: none;
+}
+
+.btn-store:hover,
+.btn-cart:hover {
+  color: cadetblue;
+  background-color: lightgrey;
+}
+
+/*------------*/
+/*--- CART ---*/
+/*------------*/
+
+.cart-wrap {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  "cart-image cart-title cart-price cart-buttons cart-total";
+}
+.cart-image {
+  grid-area: cart-image;
+  justify-self: center;
+  width: 30%;
+}
+.cart-title {
+  grid-area: cart-title;
+}
+.cart-price {
+  grid-area: cart-price;
+}
+.cart-buttons {
+  grid-area: cart-buttons;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cart-total {
+  grid-area: cart-total;
+}
+
+.cart-labels {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  "cart-label-image cart-label-product cart-label-price cart-label-quantity cart-label-totals";
+}
+.cart-label-image {
+  grid-area: cart-label-image;
+}
+.cart-label-product {
+  grid-area: cart-label-product;
+}
+.cart-label-price {
+  grid-area: cart-label-price;
+}
+.cart-label-quantity {
+  grid-area: cart-label-quantity;
+}
+.cart-label-totals {
+  grid-area: cart-label-totals;
+}
+
+.cart-totals-wrap {
+  margin-top: 30px;
+}
+
+.btn-clear {
+  padding: 10px 15px;
+  border: none;
+  background-color: cadetblue;
+  color: brown;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  outline: none;
+}
+
+.btn-clear:hover {
+  color: red;
+  background-color: lightgrey;
+} 
+
+
