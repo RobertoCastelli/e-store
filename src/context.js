@@ -24,6 +24,14 @@ export default function ProductProvider(props) {
         setCart([...cart, product])
     }
 
+    const clearCart = () => {
+        setCart([])
+    }
+
+    const removeItem = id => {
+        setCart(cart.filter(item => item.id !== id)) 
+    }
+
     return (
         <ProductContext.Provider value={{
             products,
@@ -33,7 +41,10 @@ export default function ProductProvider(props) {
             setDetails,
             setCart,
             handleDetails,
-            handleCart
+            handleCart,
+            clearCart,
+            removeItem
+
         }}>
             {props.children}    
         </ProductContext.Provider>
