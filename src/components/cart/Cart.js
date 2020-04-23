@@ -16,6 +16,7 @@ export default function Cart() {
             title={item.title}
             price={item.price}
             count={item.count}
+            total={item.total}
         />
     })
     

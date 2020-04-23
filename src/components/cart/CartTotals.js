@@ -3,10 +3,11 @@ import { ProductContext } from '../../context'
 
 export default function CartTotals() {
     const context = useContext(ProductContext)
+ 
     return (
         <div className="cart-totals-wrap">
             <div className="cart-totals">
-                <div>Subtotal €10</div>
+                <div>Subtotal: {context.subtotal}</div>
                 <div>Tax €2</div>
                 <div>TOTAL €12</div>
                 <button
