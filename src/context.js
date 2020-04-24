@@ -31,16 +31,24 @@ export default function ProductProvider(props) {
         const tempProducts = [...products]
         tempProducts.map(item => {
             return (
-            item.count = 1,
-            item.total = item.price
+                item.count = 1,
+                item.total = item.price
             )
-    })
+        })
         setProducts(tempProducts)
         setCart([])
     }
 
     const removeItem = id => {
-        setCart(cart.filter(item => item.id !== id)) 
+        let tempCart = [...cart]
+        tempCart = tempCart.filter(item => {
+            return (
+                item.count = 1,
+                item.total = item.price,
+                item.id !== id
+            )
+        })
+        setCart(tempCart) 
     }
 
     const increment = id => {
@@ -58,8 +66,8 @@ export default function ProductProvider(props) {
         product.total = product.count * product.price
         setCart(tempCart)
         if (product.count <= 0) {
-            removeItem(id)
             product.count = 1
+            removeItem(id)
         }
     }
 

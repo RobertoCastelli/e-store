@@ -4,6 +4,7 @@ import Title from '../Title'
 import CartItem from './CartItem'
 import CartLabels from './CartLabels'
 import CartTotals from './CartTotals'
+import EmptyCart from './EmptyCart'
 
 export default function Cart() {
     const context = useContext(ProductContext)
@@ -19,14 +20,19 @@ export default function Cart() {
             total={item.total}
         />
     })
-    
-    return (
-        <div className="cart-container">
-            <Title title="YOUR CART" />
-            <p>In Cart: {context.cart.length}</p>
-            <CartLabels />
-            {cartList}
-            <CartTotals />
-        </div>
-    )
+
+    if (context.cart.length > 0) {
+        return (
+            <div className="cart-container">
+                <Title title="YOUR CART" />
+                <p>In Cart: {context.cart.length}</p>
+                <CartLabels />
+                {cartList}
+                <CartTotals />
+            </div>
+        )
+    } else {
+        return <EmptyCart />
+    }
 }
+    

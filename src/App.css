@@ -5,6 +5,7 @@ html {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
   color: #696969;
+  background-color: rgb(255, 247, 247);
 }
 
 i {
@@ -46,6 +47,9 @@ li:hover {
   list-style: none;
 }
 
+.nav-cart i span {
+  color: lightgrey;
+}
 /*--------------*/
 /*--- FOOTER ---*/
 /*--------------*/
@@ -79,6 +83,7 @@ h1 {
   position: relative;
   text-align: center;
   overflow: hidden;
+  background-color: white;
   border: 1px solid grey;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -177,7 +182,7 @@ h1 {
 .cart-buttons {
   grid-area: cart-buttons;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-evenly
 }
 .cart-total {
   grid-area: cart-total;
@@ -231,6 +236,8 @@ h1 {
   background-color: lightgrey;
 } 
 
-
+.cart-remove {
+  color: brown;
+}
 
 

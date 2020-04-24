@@ -1,19 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../logo.png'
 import { Link } from 'react-router-dom'
+import { ProductContext } from '../context'
 
 export default function Navbar() {
+    const context = useContext(ProductContext)
+  
     return (
         <nav>
             <Link to='/'>
-                <div className="nav-brand"><img src={logo} alt="logo"/></div>
+                <div className="nav-brand">
+                    <img src={logo} alt="logo" />
+                </div>
             </Link>
             <ul className="nav-links">
                 <Link to="/">
-                    <li><i className="fas fa-store-alt fa-2x"></i></li>
+                    <li className="nav-store">
+                        <i className="fas fa-store-alt fa-2x"></i>
+                    </li>
                 </Link>
                 <Link to="/cart">
-                    <li><i className="fas fa-cart-arrow-down fa-2x"></i></li>
+                    <li className="nav-cart">
+                        <i className="fas fa-cart-arrow-down fa-2x"><span> {context.cart.length}</span></i>
+                       
+                    </li>
                 </Link>
             </ul>
         </nav>
