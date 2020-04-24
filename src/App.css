@@ -158,9 +158,10 @@ h1 {
   align-items: center;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: 2fr;
   grid-template-areas: 
-  "cart-image cart-title cart-price cart-buttons cart-total";
+  "cart-image cart-title cart-price cart-buttons cart-total"
+  "cart-totals-wrap cart-totals-wrap cart-totals-wrap cart-totals-wrap cart-totals-wrap";
 }
 .cart-image {
   grid-area: cart-image;
@@ -207,24 +208,29 @@ h1 {
 }
 
 .cart-totals-wrap {
-  margin-top: 30px;
+  text-align: right;
+  margin: 30px;
+  line-height: 20px;
 }
 
 .btn-clear {
   padding: 10px 15px;
   border: none;
   background-color: cadetblue;
-  color: brown;
+  color: white;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   cursor: pointer;
   transition: 0.5s ease;
   outline: none;
+  margin-top: 20px;
 }
 
 .btn-clear:hover {
   color: red;
   background-color: lightgrey;
 } 
+
+
 
 

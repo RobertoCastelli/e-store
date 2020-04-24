@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { storeProducts, detailProduct } from '../src/data'
 
 export const ProductContext = React.createContext()
@@ -8,6 +8,8 @@ export default function ProductProvider(props) {
     const [details, setDetails] = useState(detailProduct)
     const [cart, setCart] = useState([])
     const [subtotal, setSubtotal] = useState(0)
+    const [tax, setTax] = useState(0)
+    const [totale, setTotale] = useState(0)
   
 
     const getItem = id => {
@@ -26,6 +28,14 @@ export default function ProductProvider(props) {
     }
 
     const clearCart = () => {
+        const tempProducts = [...products]
+        tempProducts.map(item => {
+            return (
+            item.count = 1,
+            item.total = item.price
+            )
+    })
+        setProducts(tempProducts)
         setCart([])
     }
 
@@ -38,7 +48,6 @@ export default function ProductProvider(props) {
         const product = tempCart.find(item => item.id === id)
         product.count = product.count + 1
         product.total = product.count * product.price
-        handleTotals()
         setCart(tempCart)
     }
 
@@ -47,19 +56,27 @@ export default function ProductProvider(props) {
         const product = tempCart.find(item => item.id === id)
         product.count = product.count - 1
         product.total = product.count * product.price
-        handleTotals()
         setCart(tempCart)
         if (product.count <= 0) {
             removeItem(id)
+            product.count = 1
         }
     }
 
     const handleTotals = () => {
-        const tempCart = [...cart]
         let tempSubtotal = 0
-        tempCart.map(item => tempSubtotal += item.total)
+        cart.map(item => tempSubtotal += item.total)
+        let tempTax = tempSubtotal * 0.22
+        tempTax = parseFloat(tempTax.toFixed(2))
+        let tempTotale = tempSubtotal + tempTax
         setSubtotal(tempSubtotal)
+        setTax(tempTax)
+        setTotale(tempTotale)
     }
+
+    useEffect(() => {
+        handleTotals()
+    })
 
     return (
         <ProductContext.Provider value={{
@@ -67,16 +84,20 @@ export default function ProductProvider(props) {
             details,
             cart,
             subtotal,
+            tax,
+            totale,
             setProducts,
             setDetails,
             setCart,
             setSubtotal,
+            setTax,
+            setTotale,
             handleDetails,
             handleCart,
             clearCart,
             removeItem,
             increment,
-            decrement,
+            decrement
         }}>
             {props.children}    
         </ProductContext.Provider>
