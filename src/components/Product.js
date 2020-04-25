@@ -4,8 +4,9 @@ import { ProductContext } from '../context'
 
 export default function Product(props) {
     const context = useContext(ProductContext)
-    const { id, img, title, price } = props
+    const { id, img, title, price, inCart } = props
 
+    console.log(inCart)
     return (
         <div className="product-card">
             <h2>{title}</h2>
@@ -23,10 +24,17 @@ export default function Product(props) {
             </div>
             <button
                 className="btn-cart-product"
-                onClick={() => context.handleCart(id)}
-            >
-                <i className="fas fa-cart-plus fa-2x"></i>
+                onClick={() => {
+                    context.handleCart(id)
+                    context.openModal(id)
+                }}
+            >ciao
+                
             </button>
         </div>
     )
 }
+
+// { {{ inCart }  ? (<p disabled>In Cart</p>)
+//                     : (<i className="fas fa-cart-plus fa-2x"></i>)
+//                 } 

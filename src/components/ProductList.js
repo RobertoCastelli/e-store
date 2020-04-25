@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { ProductContext } from '../context'
 import Product from './Product'
 import Title from './Title'
+import Modal from './Modal'
 
 export default function ProductList() {
     const context = useContext(ProductContext)
@@ -21,6 +22,7 @@ export default function ProductList() {
             <Title title="E-STORE" />
             <div className="product-list">
                 {productsList}
+                <Modal />
             </div>
         </div>
     )

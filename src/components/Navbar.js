@@ -17,7 +17,8 @@ export default function Navbar() {
             <ul className="nav-links">
                 <Link to="/">
                     <li
-                        className="btn-nav-store">
+                        className="btn-nav-store"
+                        onClick={() => context.closeModal()}>
                         <i className="fas fa-store-alt fa-2x"></i>
                     </li>
                 </Link>

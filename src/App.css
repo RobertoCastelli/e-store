@@ -140,13 +140,15 @@ h1 {
   padding: 0 10px;
 }
 
-.detail-buttons{
+.detail-buttons,
+.modal-buttons {
   display: flex;
   justify-content: space-evenly;
 }
 
 .btn-store,
-.btn-cart-detail {
+.btn-cart-detail,
+.btn-cart-modal {
   padding: 10px 15px;
   border: none;
   background-color: cadetblue;
@@ -159,7 +161,8 @@ h1 {
 
 .btn-store:hover,
 .btn-cart-detail:hover,
-.btn-cart-product:hover {
+.btn-cart-product:hover,
+.btn-cart-modal:hover {
   color: cadetblue;
   background-color: lightgrey;
 }
@@ -249,4 +252,31 @@ h1 {
   color: brown;
 }
 
+/*-------------*/
+/*--- MODAL ---*/
+/*-------------*/
 
+.modal-container {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0,0,0,0.3);
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+z-index: 1;
+}
+
+.modal-wrap {
+  background-color: white;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.modal-image {
+  width: 300px;
+}

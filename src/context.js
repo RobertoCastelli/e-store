@@ -10,8 +10,9 @@ export default function ProductProvider(props) {
     const [subtotal, setSubtotal] = useState(0)
     const [tax, setTax] = useState(0)
     const [totale, setTotale] = useState(0)
+    const [modal, setModal] = useState(detailProduct)
+    const [modalState, setModalState] = useState(false)
   
-
     const getItem = id => {
         const product = products.find(item => item.id === id)
         return product
@@ -39,6 +40,16 @@ export default function ProductProvider(props) {
         setProducts(tempProducts)
         setCart([])
     }
+
+    const openModal = id => {
+        const product = getItem(id)
+        return (
+        setModal(product),
+        setModalState(true)
+        )
+    }
+
+    const closeModal = () => setModalState(false)
 
     const removeItem = id => {
         let tempCart = [...cart]
@@ -83,9 +94,7 @@ export default function ProductProvider(props) {
         setTotale(tempTotale)
     }
 
-    useEffect(() => {
-        handleTotals()
-    })
+    useEffect(() => handleTotals())
 
     return (
         <ProductContext.Provider value={{
@@ -95,6 +104,10 @@ export default function ProductProvider(props) {
             subtotal,
             tax,
             totale,
+            modal,
+            modalState,
+            setModalState,
+            setModal,
             setProducts,
             setDetails,
             setCart,
@@ -106,7 +119,9 @@ export default function ProductProvider(props) {
             clearCart,
             removeItem,
             increment,
-            decrement
+            decrement,
+            openModal,
+            closeModal
         }}>
             {props.children}    
         </ProductContext.Provider>

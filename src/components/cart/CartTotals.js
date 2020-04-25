@@ -17,7 +17,11 @@ export default function CartTotals() {
             <Link to='/'>
                 <button
                     className="btn-clear"
-                    onClick={() => context.clearCart()}
+                    onClick={() => {
+                        context.clearCart()
+                        context.closeModal()
+                        }
+                    }
                 >CLEAR ALL
                 </button>           
             </Link>
