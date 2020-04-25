@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PayPal from './PayPal'
 import { ProductContext } from '../../context'
 import { Link } from 'react-router-dom'
 
@@ -20,11 +21,11 @@ export default function CartTotals() {
                     onClick={() => {
                         context.clearCart()
                         context.closeModal()
-                        }
-                    }
+                    }}
                 >CLEAR ALL
                 </button>           
             </Link>
+            <PayPal total={context.totale}  />
         </div>
     )
 }

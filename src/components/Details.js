@@ -17,8 +17,7 @@ export default function Details() {
                     <p>{info}</p>
                     <div className="detail-buttons">
                         <Link to="/">
-                            <button
-                                className="btn-store">
+                            <button className="btn-store">
                                 <i className="fas fa-store-alt fa-2x"></i>
                             </button>
                         </Link>

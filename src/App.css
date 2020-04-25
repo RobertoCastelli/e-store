@@ -60,6 +60,17 @@ footer {
   text-align: center;
   margin-bottom: 10px;
 }
+/*---------------*/
+/*--- DEFAULT ---*/
+/*---------------*/
+
+.history {
+  color: brown;
+}
+
+.btn-store-default {
+  text-align: center;
+}
 
 /*---------------*/
 /*--- E-STORE ---*/
@@ -69,12 +80,16 @@ footer {
   max-width: 1140px;
   /* margin: 80px auto 0 auto; */
   margin: auto;
-  height: 90vh;
+  height: 100vh;
 }
 
 h1 {
   text-align: center;
   text-decoration: overline;
+}
+
+h2 {
+  text-align: center;
 }
 
 .product-list {
@@ -151,7 +166,8 @@ h1 {
 
 .btn-store,
 .btn-cart-detail,
-.btn-cart-modal {
+.btn-cart-modal,
+.btn-store-default {
   padding: 10px 15px;
   border: none;
   background-color: cadetblue;
@@ -244,7 +260,7 @@ h1 {
   cursor: pointer;
   transition: 0.5s ease;
   outline: none;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .btn-clear:hover {
