@@ -25,7 +25,6 @@ export default function ProductProvider(props) {
 
     const handleCart = id => {
         const product = getItem(id)
-        product.inCart = true
         setCart([...cart, product])
     }
 

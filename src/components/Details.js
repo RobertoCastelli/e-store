@@ -22,9 +22,10 @@ export default function Details() {
                                 <i className="fas fa-store-alt fa-2x"></i>
                             </button>
                         </Link>
-                        <button
-                            className="btn-cart-detail"
-                            onClick={() => context.handleCart(id)}
+                    <button
+                       
+                        className="btn-cart-detail"
+                        onClick={() => context.handleCart(id)}
                         ><i className="fas fa-cart-plus fa-2x"></i>
                         </button>
                     </div>

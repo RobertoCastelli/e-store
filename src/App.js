@@ -24,3 +24,12 @@ export default function App() {
       </ProductProvider>
   );
 }
+
+/*
+*-----------*
+* ---BUGS---*
+*-----------*
+total decimal incorrect
+footer doens't sits well on bottom
+disable cart button ain't working
+*/
