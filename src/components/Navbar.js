@@ -9,20 +9,24 @@ export default function Navbar() {
     return (
         <nav>
             <Link to='/'>
-                <div className="nav-brand">
+                <div
+                    className="nav-brand">
                     <img src={logo} alt="logo" />
                 </div>
             </Link>
             <ul className="nav-links">
                 <Link to="/">
-                    <li className="nav-store">
+                    <li
+                        className="btn-nav-store">
                         <i className="fas fa-store-alt fa-2x"></i>
                     </li>
                 </Link>
                 <Link to="/cart">
-                    <li className="nav-cart">
-                        <i className="fas fa-cart-arrow-down fa-2x"><span> {context.cart.length}</span></i>
-                       
+                    <li
+                        className="btn-nav-cart">
+                        <i className="fas fa-cart-arrow-down fa-2x">
+                            <span> {context.cart.length}</span>
+                        </i>
                     </li>
                 </Link>
             </ul>

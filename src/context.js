@@ -24,6 +24,7 @@ export default function ProductProvider(props) {
 
     const handleCart = id => {
         const product = getItem(id)
+        product.inCart = true
         setCart([...cart, product])
     }
 
@@ -75,7 +76,7 @@ export default function ProductProvider(props) {
         let tempSubtotal = 0
         cart.map(item => tempSubtotal += item.total)
         let tempTax = tempSubtotal * 0.22
-        tempTax = parseFloat(tempTax.toFixed(2))
+        tempTax = parseFloat((tempTax).toFixed(2))
         let tempTotale = tempSubtotal + tempTax
         setSubtotal(tempSubtotal)
         setTax(tempTax)

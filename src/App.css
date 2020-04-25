@@ -27,14 +27,16 @@ nav {
   z-index: 1;
 }
 
-li {
+.btn-nav-store,
+.btn-nav-cart {
   padding-right: 30px ;
   text-decoration: none;
   color: white;
-  transition: 0.5s linear;
+  transition: 0.3s linear;
 }
 
-li:hover {
+.btn-nav-store:hover,
+.btn-nav-cart:hover {
  transform: scale(1.1)
 }
 
@@ -47,7 +49,7 @@ li:hover {
   list-style: none;
 }
 
-.nav-cart i span {
+.btn-nav-cart i span {
   color: lightgrey;
 }
 /*--------------*/
@@ -100,7 +102,7 @@ h1 {
   transform: scale(1.1);
 }
 
-.btn-cart{
+.btn-cart-product{
   position: absolute;
   bottom: 0;
   left: 100%;
@@ -113,7 +115,7 @@ h1 {
   outline: none;
 }
 
-.product-card:hover .btn-cart{
+.product-card:hover .btn-cart-product{
   transform: translate(-100%)
 }
 
@@ -138,7 +140,13 @@ h1 {
   padding: 0 10px;
 }
 
-.btn-store {
+.detail-buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-store,
+.btn-cart-detail {
   padding: 10px 15px;
   border: none;
   background-color: cadetblue;
@@ -150,7 +158,8 @@ h1 {
 }
 
 .btn-store:hover,
-.btn-cart:hover {
+.btn-cart-detail:hover,
+.btn-cart-product:hover {
   color: cadetblue;
   background-color: lightgrey;
 }
@@ -232,11 +241,11 @@ h1 {
 }
 
 .btn-clear:hover {
-  color: red;
+  color: brown;
   background-color: lightgrey;
 } 
 
-.cart-remove {
+.btn-cart-remove {
   color: brown;
 }
 

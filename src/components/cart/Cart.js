@@ -25,7 +25,6 @@ export default function Cart() {
         return (
             <div className="cart-container">
                 <Title title="YOUR CART" />
-                <p>In Cart: {context.cart.length}</p>
                 <CartLabels />
                 {cartList}
                 <CartTotals />
