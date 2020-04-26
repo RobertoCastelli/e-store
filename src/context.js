@@ -95,6 +95,7 @@ export default function ProductProvider(props) {
 
     useEffect(() => handleTotals())
 
+
     return (
         <ProductContext.Provider value={{
             products,

@@ -12,7 +12,7 @@ export default function CartTotals() {
             <hr/>
             <div className="cart-totals">
                 <div>Subtotal: €{context.subtotal}</div>
-                <div>Tax: €{context.tax}</div>
+                <div>22% Tax: €{context.tax}</div>
                 <div><strong>TOTAL: €{context.totale}</strong></div>   
             </div>
             <Link to='/'>

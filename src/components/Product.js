@@ -26,7 +26,8 @@ export default function Product(props) {
                 onClick={() => {
                     context.handleCart(id)
                     context.openModal(id)
-                }}><i className="fas fa-cart-plus fa-2x"></i>
+                }}
+            ><i className="fas fa-cart-plus fa-2x"></i>
             </button> 
         </div>
     )

@@ -10,7 +10,8 @@ export default function Navbar() {
         <nav>
             <Link to='/'>
                 <div
-                    className="nav-brand">
+                    className="nav-brand"
+                    onClick={() => context.closeModal()}>
                     <img src={logo} alt="logo" />
                 </div>
             </Link>
