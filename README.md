@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## E-STORE
 
-> a fully functiona store
+> a fully functional warehouse using Firebase database
 
 Enjoy!
 
